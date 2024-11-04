@@ -1,11 +1,15 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PokemonsList from './pokemons/PokemonsList';
+import PokemonItem from './pokemon/PokemonItem';
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1>Pokémon List</h1>
-      <PokemonsList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<PokemonsList />} />
+        <Route path="/pokemon/:name" element={<PokemonItem />} />
+      </Routes>
+    </Router>
   );
 }
 

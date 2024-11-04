@@ -1,5 +1,3 @@
-// pokemon/PokemonItem.tsx
-import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGetPokemon } from './useGetPokemon';
 import { CircularProgress, Card, CardContent, CardMedia, Typography, List, ListItem, Button } from '@mui/material';
