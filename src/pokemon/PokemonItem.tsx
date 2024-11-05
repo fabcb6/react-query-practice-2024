@@ -23,7 +23,7 @@ function PokemonItem() {
   
   const handleFavorite = () => {
     if (data) {
-      favoritePokemon(data.id);  // Triggers the mutation with the Pokémon ID
+      favoritePokemon(data.id); // Call mutation with Pokémon’s ID
     }
   };
   
