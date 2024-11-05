@@ -22,10 +22,12 @@ async function fetchPokemon(name: string): Promise<PokemonDetail> {
   return response.json();
 }
 
-// Custom hook to use the fetch function with react-query
+// Custom hook to use the fetch function with caching options
 export function useGetPokemon(name: string) {
   return useQuery({
     queryKey: ['pokemon', name],
     queryFn: () => fetchPokemon(name),
+    staleTime: 1000 * 60 * 5, // 5 minutes - data is considered fresh for this duration
+    cacheTime: 1000 * 60 * 30, // 30 minutes - cache remains even after becoming stale
   });
 }
